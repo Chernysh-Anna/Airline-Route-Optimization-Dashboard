@@ -1,13 +1,13 @@
 import pandas as pd
 
-# Define column names 
+# Define column names
 airports_cols = [
     "Airport_ID", "Name", "City", "Country", "IATA", "ICAO",
     "Latitude", "Longitude", "Altitude", "Timezone", "DST", "Tz", "Type", "Source"
 ]
 
 airlines_cols = [
-     "Airline_ID", "Name", "Alias", "IATA", "ICAO", "Callsign", "Country", "Active"
+    "Airline_ID", "Name", "Alias", "IATA", "ICAO", "Callsign", "Country", "Active"
 ]
 
 routes_cols = [
@@ -21,10 +21,17 @@ airports = pd.read_csv("airports.dat", header=None, names=airports_cols)
 airlines = pd.read_csv("airlines.dat", header=None, names=airlines_cols)
 routes = pd.read_csv("routes.dat", header=None, names=routes_cols)
 
+# Fix data types for join keys
+routes["Airline_ID"] = pd.to_numeric(routes["Airline_ID"], errors='coerce').astype('Int64')
+airlines["Airline_ID"] = pd.to_numeric(airlines["Airline_ID"], errors='coerce').astype('Int64')
+routes["Source_airport_ID"] = pd.to_numeric(routes["Source_airport_ID"], errors='coerce').astype('Int64')
+routes["Destination_airport_ID"] = pd.to_numeric(routes["Destination_airport_ID"], errors='coerce').astype('Int64')
+airports["Airport_ID"] = pd.to_numeric(airports["Airport_ID"], errors='coerce').astype('Int64')
+
 # Keep only active airlines
 airlines = airlines[airlines["Active"] == "Y"]
 
-# Merge routes with airport and airline info
+# Merge routes with airline names
 routes_full = routes.merge(
     airlines[['Airline_ID', 'Name']], on='Airline_ID', how='left'
 ).merge(
@@ -41,7 +48,7 @@ routes_full = routes.merge(
     'Latitude': 'Dest_Lat', 'Longitude': 'Dest_Lng'
 })
 
-# Drop unnecessary columns
+# Drop unnecessary columns and rows with missing data
 columns_to_keep = [
     'Name', 'Source_airport', 'Source_City', 'Source_Country', 'Source_Lat', 'Source_Lng',
     'Destination_airport', 'Destination_City', 'Destination_Country', 'Dest_Lat', 'Dest_Lng',
@@ -52,4 +59,4 @@ routes_clean = routes_full[columns_to_keep].dropna()
 
 # Save to CSV
 routes_clean.to_csv("cleaned_routes.csv", index=False)
-print("✅ Cleaned data saved to cleaned_routes.csv")
+print("Cleaned data saved to cleaned_routes.csv")
