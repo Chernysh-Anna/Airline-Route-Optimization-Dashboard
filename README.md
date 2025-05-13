@@ -20,28 +20,39 @@ The insights are presented using **interactive Tableau dashboards** and **Python
 - Identify:
   - ✅ Top and bottom destination cities
   - ✈️ Most active airlines from Edinburgh
+
+-  Worldwide airline route
   - 🚫 Underserved airports (with only outgoing routes)
   - ⚖️ Airports with imbalanced incoming/outgoing traffic
-- Compare flight networks between **Edinburgh** and **London**
+
 
 ---
 
+## 💡 Key Insights
+
+- Low-cost carriers like **EasyJet** and **Ryanair** dominate Edinburgh's market
+- Top destinations include **London**, **Paris**, and **Amsterdam**
+- Some airports have **no return flights**, which may suggest:
+  - Seasonal routes
+  - Strategic flight planning gaps
+<!-- Route networks can differ significantly between **Edinburgh** and **London** -->
+
 ## 📊 Tableau Dashboard
 
-Built in [Tableau Public](https://public.tableau.com/), the interactive dashboard includes:
+Built in [Tableau Public]([https://public.tableau.com/]), the interactive dashboard includes:
 
 - 🌍 **World map of routes** from Edinburgh
 - 🔝 **Top 10 destinations**
 - ⛔ **Least served cities**
 - 🏢 **Airlines with the most destinations**
 - 📌 **Destination countries**
-- 🔄 Optional comparison with **London**
+<!-- 🔄 Optional comparison with **London** -->
 
 ### 🔗 Dashboard Link:
-[View Tableau Dashboard Here](#) *(insert your Tableau Public link here)*
+[View Tableau Dashboard Here](https://public.tableau.com/app/profile/ann.chern/viz/Airline-Dashboard_17471697005370/Dashboard1?publish=yes) 
 
 ### 📸 Dashboard Preview
-![Dashboard Screenshot](./bcac623c-9a9d-42e8-a65f-9ce3d21588dc.png)
+![Dashboard Screenshot](/Flight from Edinburgh.png)
 
 ---
 
@@ -54,7 +65,7 @@ Built in [Tableau Public](https://public.tableau.com/), the interactive dashboar
 
 ### 🔧 Processing Steps:
 - Clean and merge datasets
-- Create `routes_clean.csv`
+- Create `cleaned_routes.csv`
 - Analyze total traffic per airport
 - Detect airports with:
   - No incoming flights
@@ -74,57 +85,15 @@ Built in [Tableau Public](https://public.tableau.com/), the interactive dashboar
 
 ---
 
-## 📂 Project Files
-
-| File | Description |
-|------|-------------|
-| `routes_clean.csv` | Cleaned dataset used in Tableau |
-| `airport_traffic_analysis.csv` | Airport traffic summary |
-| `underserved_airports.csv` | Airports with no incoming routes |
-| `top_20_airports.png` | Visualization of top airports |
-| `imbalanced_airports.png` | Airports with route imbalances |
-| `flight_analysis.ipynb` | Python notebook |
-| Tableau Dashboard | Interactive visualization (see link above) |
-
----
-
 ## 🛠️ Tools & Technologies
 
 - **Python 3** (Pandas, Matplotlib)
 - **Tableau Public**
-- **Jupyter Notebook**
+- **VS Code**
 - **CSV Data (OpenFlights.org)**
 
 ---
 
-## 💡 Key Insights
-
-- Low-cost carriers like **EasyJet** and **Ryanair** dominate Edinburgh's market
-- Top destinations include **London**, **Paris**, and **Amsterdam**
-- Some airports have **no return flights**, which may suggest:
-  - Seasonal routes
-  - Strategic flight planning gaps
-- Route networks can differ significantly between **Edinburgh** and **London**
-
----
-
-## 📌 Future Work
-
-- Add **temporal data** (flight frequency, seasonality)
-- Calculate **route distances** or durations
-- Include **passenger volume or aircraft type**
-- Build **country-to-country connection map**
-
----
-
-## 👤 Author
-
-**[Your Name]**  
-- 🌐 [GitHub](https://github.com/yourusername)  
-- 💼 [LinkedIn](https://www.linkedin.com/in/yourprofile)  
-- 📧 [Your Email (optional)]
-
----
 
 > Feel free to fork, clone, and contribute ideas or extensions!
 
