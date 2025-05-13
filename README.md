@@ -8,7 +8,7 @@ Using both **Python** and **Tableau**, the goal is to understand:
 - Where passengers fly from Edinburgh
 - Which airlines dominate this market
 - Which airports are underserved
-<-- How route networks compare between Edinburgh and other major hubs like **London** -->
+<!-- How route networks compare between Edinburgh and other major hubs like **London** -->
 
 The insights are presented using **interactive Tableau dashboards** and **Python-based data analysis** with visualizations.
 
