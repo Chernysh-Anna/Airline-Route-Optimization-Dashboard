@@ -81,7 +81,7 @@ Built in [Tableau Public]([https://public.tableau.com/]), the interactive dashbo
 
 #### ⚠️ Most Imbalanced Airports
 > Airports with high outgoing but low incoming routes
-> green' if 'incoming' > 'outgoing' routes
+> ( green' if 'incoming' > 'outgoing' routes)
 ![Imbalanced Airports](./imbalanced_airports.png)
 
 ---
