@@ -51,8 +51,7 @@ Built in [Tableau Public]([https://public.tableau.com/]), the interactive dashbo
 ### 🔗 Dashboard Link:
 [View Tableau Dashboard Here](https://public.tableau.com/app/profile/ann.chern/viz/Airline-Dashboard_17471697005370/Dashboard1?publish=yes) 
 
-### 📸 Dashboard Preview
-![Dashboard Screenshot](/Flight from Edinburgh.png)
+
 
 ---
 
